@@ -3,6 +3,9 @@
     "name": "ShoppingApp",
     "slug": "ShoppingApp",
     "version": "1.0.0",
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
