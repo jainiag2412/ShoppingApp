@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colours from "../../assets/constants/colours";
@@ -7,9 +7,10 @@ import { RootStackParamList } from "../../types/NavigationTypes";
 import { styles } from "./OrdderConfirmation-style";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
-import Header from "../../components/common/Header";
 import { moderateScale } from "../../assets/constants/scale";
 import NoScaleText from "../../components/common/NoScaleText";
+import { useDispatch } from "react-redux";
+import { removeAllFromCart } from "../../redux/slices/cartSlice";
 
 type OrderConfirmationNavType = StackNavigationProp<
   RootStackParamList,
@@ -18,6 +19,11 @@ type OrderConfirmationNavType = StackNavigationProp<
 
 const OrderConfirmation = () => {
   const navigation = useNavigation<OrderConfirmationNavType>();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(removeAllFromCart());
+  }, []);
 
   return (
     <View style={styles.container}>

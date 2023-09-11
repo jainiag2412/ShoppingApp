@@ -118,7 +118,7 @@ const CartScreen = () => {
           style={{ justifyContent: "center" }}
           onPress={() => navigation.navigate("CheckoutScreen")}
         >
-          <NoScaleText style={styles.checkOutBtnTxt}>CheckOut</NoScaleText>
+          <NoScaleText style={styles.checkOutBtnTxt}>Checkout</NoScaleText>
         </BottomButton>
       )}
     </View>
