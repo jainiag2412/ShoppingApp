@@ -55,14 +55,12 @@ const ProductDetail = (props: RootStackScreenProps<"ProductDetail">) => {
   const attributeValues = useMemo(() => {
     if (attributeType === "COLOR") {
       return productDetail.variants
-        .filter((variant) => variant.size === selectedSize)
         .map((variant) => variant.color)
         .filter(
           (value, index, attributes) => attributes.indexOf(value) === index
         );
     } else if (attributeType === "SIZE") {
       return productDetail.variants
-        .filter((variant) => variant.color === selectedColor)
         .map((variant) => variant.size)
         .filter(
           (value, index, attributes) => attributes.indexOf(value) === index

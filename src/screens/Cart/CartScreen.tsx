@@ -27,6 +27,7 @@ import { fonts } from "../../assets/constants/values";
 import TotalCost from "../../components/cart/TotalCost";
 import EmptyCart from "../../components/cart/EmptyCart";
 import { removeAllFromCart } from "../../redux/slices/cartSlice";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 type CartScreenNavType = StackNavigationProp<RootStackParamList, "CartScreen">;
 
@@ -71,7 +72,12 @@ const CartScreen = () => {
       {responseComes == true && cartData.length == 0 ? (
         <EmptyCart />
       ) : (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <KeyboardAwareScrollView
+          keyboardShouldPersistTaps={"handled"}
+          enableResetScrollToCoords={false}
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+        >
           <TouchableOpacity onPress={removeAllProductsFromCart}>
             <NoScaleText style={styles.removeAllTxt}>Remove All</NoScaleText>
           </TouchableOpacity>
@@ -104,7 +110,7 @@ const CartScreen = () => {
               </View>
             </View>
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
       )}
       {responseComes == true && cartData.length > 0 && (
         <BottomButton

@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import Modal from "react-native-modal";
 import { fonts, values } from "../../assets/constants/values";
 import colours from "../../assets/constants/colours";
@@ -31,26 +31,28 @@ function CategoryBottomModal(props: IBottomModal) {
               color={colours.black}
             />
           </TouchableOpacity>
-          {props.attributeValues.map((value, index) => {
-            return (
-              <TouchableOpacity
-                key={index}
-                onPress={() => props.onSelectAttribute(value)}
-              >
-                <View style={styles.attributesValueView}>
-                  <NoScaleText>{value}</NoScaleText>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            {props.attributeValues.map((value, index) => {
+              return (
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => props.onSelectAttribute(value)}
+                >
+                  <View style={styles.attributesValueView}>
+                    <NoScaleText>{value}</NoScaleText>
 
-                  {props.selectedAttribute === value && (
-                    <Icon
-                      name={"check"}
-                      size={fonts.mediumSmallFont}
-                      color={colours.black}
-                    />
-                  )}
-                </View>
-              </TouchableOpacity>
-            );
-          })}
+                    {props.selectedAttribute === value && (
+                      <Icon
+                        name={"check"}
+                        size={fonts.mediumSmallFont}
+                        color={colours.black}
+                      />
+                    )}
+                  </View>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
         </View>
       </View>
     </Modal>

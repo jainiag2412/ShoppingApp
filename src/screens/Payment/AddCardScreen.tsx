@@ -88,7 +88,7 @@ const AddCardScreen = () => {
     }
 
     setCardNum(formattedText);
-    if (formattedText?.length < 22) {
+    if (formattedText?.length < 16 || formattedText?.length > 23) {
       setCardNumberError("Enter valid card number");
     } else {
       setCardNumberError("");

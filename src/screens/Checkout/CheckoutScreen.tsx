@@ -87,7 +87,7 @@ const CheckoutScreen = () => {
       </View>
 
       <BottomButton
-        disabled={false}
+        disabled={selectedAddress && selectedPaymentCard ? false : true}
         style={{ justifyContent: "space-between" }}
         onPress={() => navigation.navigate("OrderConfirmation")}
       >

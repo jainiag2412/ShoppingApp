@@ -7,7 +7,14 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "start-clear-cache": "react-native start --reset-cache",
+    "ios-bundle": "react-native bundle --dev false --entry-file index.js --bundle-output ios/main.jsbundle --platform ios",
+    "start-android": "react-native run-android",
+    "start-ios": "react-native run-ios",
+    "android-build": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "pod-install": "cd ./ios && pod install",
+    "pod-update": "cd ./ios && pod update"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.3",
