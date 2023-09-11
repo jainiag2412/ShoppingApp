@@ -37,7 +37,7 @@ const HomeScreen = () => {
     loading,
     error,
   } = useFetch(
-    "https://shoppingapi.s3.ap-southeast-2.amazonaws.com/data3.json"
+    "https://shoppingapi.s3.ap-southeast-2.amazonaws.com/data4.json"
   );
   useEffect(() => {
     if (!loading && !error && productData) {
