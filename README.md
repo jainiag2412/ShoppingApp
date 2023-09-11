@@ -9,5 +9,5 @@ This repo contains a sample shopping app created using react native.
 
 1. `cd` into the project root directory.
 2. run `npm install` to install all dependencies
-3. Go to ios folder of project. Then run pod install(cd ./ios && pod install)
+3. if running on IOS then Go to `ios` folder of project. Then run `pod install`
 4. to run on android emulator - run `npm run android` and to run on IOS `npm run ios`
